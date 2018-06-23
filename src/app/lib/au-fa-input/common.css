@@ -1,0 +1,30 @@
+.icon {
+  width: 20px;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 2px;
+  border: none;
+}
+
+:host {
+  border-style: solid;
+  border-width: 1px;
+  padding: 1px 0;
+  display: inline-block;
+}
+
+:host(.input-focus) {
+  outline: none;
+}
+
+:host /deep/ input {
+  border: none;
+  outline: none;
+  display: inline;
+  margin: 1px 0;
+  box-sizing: border-box;
+}
+
+:host /deep/ input:focus {
+  box-shadow: none;
+}
