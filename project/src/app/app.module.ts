@@ -6,6 +6,8 @@ import { AuFaInputComponent } from './lib/au-fa-input/au-fa-input.component';
 import { InputRefDirective } from './lib/common/input-ref.directive';
 import { CustomAttrDirectiveComponent } from './components/custom-attr-directive/custom-attr-directive.component';
 import { CustomStructuralDirectiveComponent } from './components/custom-structural-directive/custom-structural-directive.component';
+import { TabPanelComponent } from './components/custom-structural-directive/tab-panel/tab-panel.component';
+import { TabComponent } from './components/custom-structural-directive/tab/tab.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { CustomStructuralDirectiveComponent } from './components/custom-structur
     AuFaInputComponent,
     InputRefDirective,
     CustomAttrDirectiveComponent,
-    CustomStructuralDirectiveComponent
+    CustomStructuralDirectiveComponent,
+    TabPanelComponent,
+    TabComponent
   ],
   imports: [BrowserModule],
   providers: [],
