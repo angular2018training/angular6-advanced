@@ -1,27 +1,37 @@
-<au-tab-panel>
+<ng-template #headerButtons>
+  <div class="row mt-5">
+    <div class="col-6">
+      <button type="button" class="btn btn-primary mr-3" (click)="tabPanel.selectTab(loginTab)">Login</button>
+      <button type="button" class="btn btn-danger mr-3" (click)="tabPanel.selectTab(signupTab)">Signup</button>
+      <button type="button" class="btn btn-success mr-3" (click)="tabPanel.selectTab(contactTab)">Contact</button>
+    </div>
+  </div>
+</ng-template>
+<!-- <au-tab-panel #tabPanel [headerTemplate]="headerButtons"> -->
+<au-tab-panel #tabPanel>
   <!-- Tab Login -->
-  <au-tab title="Login">
+  <au-tab title="Login" #loginTab>
     <form>
-      <div class="col-6">
-        <div class="form-group">
-          <label for="">Email</label>
-          <input type="text" class="form-control" placeholder="">
+      <div class="col-6 ">
+        <div class="form-group ">
+          <label for=" ">Email</label>
+          <input type="text " class="form-control " placeholder=" ">
         </div>
       </div>
-      <div class="col-6">
-        <div class="form-group">
-          <label for="">Password</label>
-          <input type="text" class="form-control" placeholder="">
+      <div class="col-6 ">
+        <div class="form-group ">
+          <label for=" ">Password</label>
+          <input type="text " class="form-control " placeholder=" ">
         </div>
       </div>
     </form>
   </au-tab>
   <!-- Tab Signup -->
-  <au-tab title="Signup">
+  <au-tab title="Signup" #signupTab>
     <h1>Signup tab content...</h1>
   </au-tab>
   <!-- Tab Contact -->
-  <au-tab title="Contact">
+  <au-tab title="Contact" #contactTab>
     <h1>Contact tab content...</h1>
   </au-tab>
 </au-tab-panel>
