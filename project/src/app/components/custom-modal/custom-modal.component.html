@@ -1,0 +1,42 @@
+<h1>Modal Component</h1>
+<div class="row">
+  <button type="button" class="btn btn-primary mr-5" #btnLogin (click)="setLoginActive(true)">Login</button>
+  <button type="button" class="btn btn-primary" #btnSignup (click)="setLoginActive(false)">Sign Up</button>
+</div>
+<ng-template #authModalBody let-title="title" let-loginTabActive="loginActive">
+  <h5 class="text-primary">{{ title }}</h5>
+  <au-tab-panel #tabPanel>
+    <!-- Tab Login -->
+    <au-tab title="Login" #loginTab [selected]="loginActive">
+      <form>
+        <div class="col-6 ">
+          <div class="form-group ">
+            <label for=" ">Email</label>
+            <input type="text " class="form-control " placeholder=" ">
+          </div>
+        </div>
+        <div class="col-6 ">
+          <div class="form-group ">
+            <label for=" ">Password</label>
+            <input type="text " class="form-control " placeholder=" ">
+          </div>
+        </div>
+      </form>
+    </au-tab>
+    <!-- Tab Signup -->
+    <au-tab title="Signup" #signupTab [selected]="!loginActive">
+      <h1>Signup tab content...</h1>
+    </au-tab>
+    <!-- Tab Contact -->
+    <au-tab title="Contact" #contactTab>
+      <h1>Contact tab content...</h1>
+    </au-tab>
+  </au-tab-panel>
+</ng-template>
+<au-my-modal #modal [hideOnClickOutside]="true" [hideOnEsc]="true" class="auth-modal" [body]="authModalBody" *auModalOpenOnClick="[btnLogin, btnSignup]"
+  [context]="{
+  title: 'Authentication!',
+  loginTabActive: loginActive
+}">
+  <i class="fa fa-times-circle" (click)="modal.onCloseModal()"></i>
+</au-my-modal>
